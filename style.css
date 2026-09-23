@@ -1,0 +1,81 @@
+/* universal selector */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* element selector */
+/* 
+div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+} */
+/* h1 {
+    color : violet;
+} */
+
+
+/* p {
+    color : red;
+} */
+/* id selector */
+
+#para {
+    color : violet;
+}
+
+/* class selector */
+.heading {
+    text-align: center;
+    color: green;
+    border: 2px solid ;
+}
+
+/* grouping selector */
+/* h2 , h3, p {
+    color : orange;
+} */
+
+
+/* CSS Backgrounds */
+
+body {
+    /* background-image: url("img_tree.png"); */
+    /* background-repeat: no-repeat;
+    background-position: right top; */
+    /* background-attachment: scroll; */
+/* 
+    background : url("rose.jpg") no-repeat right top fixed; */
+   
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    /* background-color: yellow; */
+
+    /* background-image: url("rose.jpg"); */
+    border : solid 2px;
+    background-color: yellow;
+    /* border-radius : 50%; */
+    /* border-width: 2px;
+    border-style: solid;
+    border-color : yellow; */
+
+    
+    background-size: contain;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-top: 40px;
+   
+}
+
+p {
+    /* margin-top: 55px;
+    margin-left: 30px; */
+    margin: 20px; /* top right left bottom */
+    margin : 20px 20px; /* top bottom and left right */
+    margin : 10px 20px 30px 40px ; /* clockwise : top right bottom left */
+    margin : 10px 32px 40px ; /* top left & right bottom */
+
+}
