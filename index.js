@@ -242,12 +242,316 @@
 //node.before(el) : adds before the node(outside)
 // node.after(el) : adds after the node (outside)
 
-let newBtn = document.createElement("button");
-newBtn.innerText = "Click Me"
-console.log(newBtn);
+// let newBtn = document.createElement("button");
+// newBtn.innerText = "Click Me"
+// console.log(newBtn);
 
-let div= document.querySelector("div");
-div.after(newBtn);
+// let div= document.querySelector("div");
+// div.after(newBtn);
 
 
 //classList
+
+
+// Event : the change in the state of an object
+// types of events : Mouse events, keyboard events, form events
+
+// handle events through functions
+// let btn2 = document.querySelector("#btn2");
+
+// btn2.onclick = () => {
+//     console.log("HANDLER 1");
+//     let a = 25;
+//     a++;
+//     console.log(a);
+// };
+
+// btn2.onclick = () => {
+//     console.log("HANDLER 2");  // handler 2 will be printed as it will override the previous eveent handling
+// };
+
+// let div = document.querySelector("div");
+
+// div.onmouseover = () => {
+//     console.log("You are inside the box")
+// }
+
+
+// event listener
+
+//syntax : node.addEventListener( event, callback)
+
+
+// let btn = document.querySelector("button");
+// btn.addEventListener("click", () => {
+//     console.log("Button was clicked - HANDLER 1")
+// })
+
+// btn.addEventListener("click", () => {
+//     console.log("Button was clicked - HANDLER 2")
+// })
+
+// btn.addEventListener("click", () => {
+//     console.log("Button was clicked - HANDLER 3")
+// })
+
+// toggle button
+
+// let btn = document.querySelector("button");
+// let body = document.querySelector("body");
+
+// let currMode = "light";
+
+// btn.addEventListener("click", () => {
+//     if(currMode === "light"){
+//         currMode = "dark";
+//         // document.querySelector("body").style.backgroundColor = "black"
+//         body.classList.add("dark");
+//         body.classList.remove("light");
+//     } else {
+//         currMode = "light";
+//                 // document.querySelector("body").style.backgroundColor = "white"
+//                 body.classList.add("light");
+//                 body.classList.remove("dark");
+
+//     }
+//   console.log(currMode);
+// })
+
+// prototypes in JS : an entity having state and behaviour[properties and methods]
+// set prototype : __proto__
+
+// const student = {
+//     fullName : "Aisha Siddique",
+//     marks : 94.4,
+
+//     prinMarks : function () {
+//         console.log("marks : ", this.marks)
+//     }
+// }
+
+
+
+// const employee = {
+//     calcTax(){
+//         console.log("tax rate is 10%");
+//     }
+// }
+
+// const amit = {
+//     salary : 50000,
+// };
+
+// const chhavi = {
+//     salary : 55000,
+// };
+
+// amit.__proto__ = employee;
+// chhavi.__proto__ = employee;
+
+// callbacks, promises and async
+
+// asynchronous and synchronous programming
+// synchronous : line by line by execution , code runs in a particular sequence of instruction given
+// let a = 10;
+// let b= 20;
+// console.log(a+b);
+// console.log("one");
+// console.log("two");
+// console.log("three");
+
+// asynchronous : Due to synchronous programming , sometimes imp instructions get blocked due to some previous instruction
+// which can cause a delay in the UI. Asyncronous code execution allows to execute next instructions immediately and doesn't block the flow
+// console.log("download a file");  // 3 sec
+// console.log("listening a music");
+
+
+// function hello(){
+//     console.log("hello world")
+// }
+
+// console.log("one");
+// console.log("two");
+// setTimeout( () => {
+//     console.log("downloading a file");
+// }, 3000);
+
+// console.log("three");
+// console.log("four");
+
+// callbacks : a callback function is a function passed as an argument to another function
+// function sum(a, b){
+//     console.log(a+b);
+// }
+
+// function calculator(a, b, sum){
+
+// }
+
+
+// callback hell : nested callback stacked below one another forming a pyramid structure[pyramid of doom]
+
+// if(){
+//     if(){
+
+//     }else {
+
+//     }
+// }else {
+
+// }
+
+// for(){
+//     for(){
+
+//     }
+// }
+
+// function getData(dataId, getNextData){
+//    // 2s
+//    setTimeout( () => {
+//      console.log("data : ", dataId);
+//      if(getNextData){
+//         getNextData();
+//      }
+//    }, 2000)
+// }
+
+// getData(1, ()=> {
+//     console.log("getting data2...")
+//     getData(2, ()=> {
+//             console.log("getting data3...")
+//         getData(3, () => {
+//                 console.log("getting data 4...")
+//             getData(4, () => {
+//                     console.log("getting data 5...")
+//                     getData(5, () => {
+//                         console.log("getting data 6.")
+//                     })
+//             });
+//         })
+//     })
+// });
+// callback hell : style of programming becomes difficult to understand and manage
+// the solution to callback hell is promises
+
+// promises : is for "eventual" completion of task, promise is an object
+// 3 states of promise : fullfilled, rejected, pending
+
+// syntax : let promise = new promise ( (resolve, reject) => {...})
+
+// let promise = new Promise((resolve, reject) => {
+//     console.log("I am a promise");
+//     // resolve(123);
+//     reject(" some error");
+// });
+
+
+// example of promise
+// function getData(dataId, getNextData){
+//    return new Promise ((resolve, reject) => {
+//      setTimeout( () => {
+//      console.log("data : ", dataId);
+//      resolve("success");
+//      if(getNextData){
+//         getNextData();
+//      }
+//    }, 4000)
+
+//    })
+  
+// }
+
+// handle promise : .then() & .catch()
+// const getPromise = () => {
+//     return new Promise((resolve, reject) => {
+//         console.log("I am a promise");
+//         resolve("Succes");
+//         reject("some error")
+
+//     })
+// }
+
+// let promise = getPromise();
+// promise.then(() => {
+//     console.log("promise fulfilled")
+// });
+
+// promise.catch(() => {
+//     console.log("rejected")
+// })
+
+// promse chain
+
+// function asyncFunc(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("some data")
+//             resolve("success")
+//         }, 2000)
+//     });
+// }
+
+// console.log("fetching data 1....");
+// asynFunc().then((res) => {
+//     console.log(res);
+// });
+
+// console.log("fetching data 2 ...")
+// asynFunc().then((res) => {
+//     console.log(res);
+// });
+
+
+// promise chain
+
+// function getData(dataId, getNextData){
+//   return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("Data : ", dataId)
+//             resolve("success")
+//         }, 2000)
+//     });
+// }
+
+// getData(1).then((res) => {
+//     console.log(res);
+//     getData(2).then((res) => {
+//         console.log(res);
+//     })
+// })
+
+// getData(1)
+// .then((res) =>{
+//     return getData(2);
+// })
+// .then((res) => {
+//     return getData(3);
+// })
+// .then((res) => {
+//     return getData(4);
+// })
+
+
+// async-await
+// async function always returns a promise
+// await pauses the exexution of its surrounding async function until the promise is settled
+function getData(dataId, getNextData){
+  return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Data : ", dataId)
+            resolve("success")
+        }, 2000)
+    });
+}
+
+
+async function getAlldata(){
+    await getData(1);
+    console.log("fetching data 2 ....")
+    await getData(2);
+     console.log("fetching data 3 ....")
+    await getData(3);
+     console.log("fetching data 4 ....")
+    await getData(4);
+}
